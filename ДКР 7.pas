@@ -17,7 +17,7 @@ end;
 
 procedure KeyDown(key: integer);
 begin
-  i := 400;
+  i := 0;
   case key of
     VK_Up: begin y1 := y1 - 15; y2 := y2 - 15; y3 := y3 - 15 end;
     VK_Down: begin y1 := y1 + 15; y2 := y2 + 15; y3 := y3 + 15 end;
@@ -27,23 +27,23 @@ begin
     VK_Q: begin t -= 1; if t=-1 then t:=0; end;
     VK_W:
       begin
-        i := i + 40;
-        x1 := x1 + i;
-        x2 := x2 + i;
-        x3 := x3 + i;
-        y1 := y1 + i;
-        y2 := y2 + i;
-        y3 := y3 + i;
+        x1 := Round(x1 * 1.1);
+        x2 := Round(x2 * 1.1);
+        x3 := Round(x3 * 1.1);
+        y1 := Round(y1 * 1.1);
+        y2 := Round(y2 * 1.1);
+        y3 := Round(y3 * 1.1);
+        l:=round(l*1.1)
       end;
       VK_S:
       begin
-        i := i - 40;
-        x1 := x1 - i;
-        x2 := x2 - i;
-        x3 := x3 - i;
-        y1 := y1 - i; 
-        y2 := y2 - i;
-        y3 := y3 - i;
+        x1 := Round(x1 / 1.1);
+        x2 := Round(x2 / 1.1);
+        x3 := Round(x3 / 1.1);
+        y1 := Round(y1 / 1.1); 
+        y2 := Round(y2 / 1.1);
+        y3 := Round(y3 / 1.1);
+        l:=round(l/1.1)
       end;
     end;
     Window.Clear;
